@@ -36,7 +36,7 @@ function CreatePostPage(){
         data.set('file',files[0]);
 
         e.preventDefault();
-        const response = await fetch('http://localhost:4000/create',{
+        const response = await fetch('https://blog-website-j3d6.onrender.com/create',{
             method:'POST',
             body: data,
             credentials: 'include',

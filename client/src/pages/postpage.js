@@ -13,7 +13,7 @@ function PostPage(){
     const [postInfo , setPostInfo] = useState(null);
     useEffect(()=>{
         // console.log(id);
-        fetch(`http://localhost:4000/post/${id}`)
+        fetch(`https://blog-website-j3d6.onrender.com/post/${id}`)
             .then(response => {
                 response.json().then(postInfo => {
                     setPostInfo(postInfo);
@@ -37,7 +37,7 @@ function PostPage(){
                     ) 
                 }
                 <div className="image">
-                    <img src={`http://localhost:4000/${postInfo.cover}`}></img>
+                    <img src={`https://blog-website-j3d6.onrender.com/${postInfo.cover}`}></img>
                 </div>
                 <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}}/>
             </div>

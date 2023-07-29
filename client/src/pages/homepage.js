@@ -6,7 +6,7 @@ import { useEffect , useState } from "react";
 function HomePage(){
     const [posts,setPosts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/create').then(response=>{
+        fetch('https://blog-website-j3d6.onrender.com/create').then(response=>{
             response.json().then(posts=>{
                 setPosts(posts);
             });
