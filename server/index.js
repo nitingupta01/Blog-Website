@@ -31,7 +31,7 @@ app.use(cors({ credentials:true,
 }));
 
 app.use(express.json());
-app.use(cookieParser(undefined,{sameSite:'none'}));
+app.use(cookieParser());
 app.use('/uploads' , express.static(__dirname + '/uploads'));
 
 
@@ -58,7 +58,7 @@ app.post('/login', async (req,res)=>{
             //logged in
             jwt.sign({username,id:userDoc._id},secret,{},(err,token)=>{
                 if(err) throw err;
-                res.cookie('token',token).json({
+                res.cookie('token',token,{sameSite:'none'}).json({
                     id:userDoc._id,
                     username,
                 });
