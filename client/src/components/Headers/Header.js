@@ -10,8 +10,8 @@ function Header(){
       }).then(response=>{
         response.json().then(userInfo =>{
           setUserInfo(userInfo);
-        });
-      });
+        }).catch(err=>alert('Error'));
+      }).catch(err=>alert('Error'));
     },[]);
 
     function logout(){
