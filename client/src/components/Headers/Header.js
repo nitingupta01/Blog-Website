@@ -18,8 +18,7 @@ function Header(){
       fetch('https://blog-website-j3d6.onrender.com/logout',{
         method:'POST',
         credentials:'include',
-      })
-      setUserInfo({undefined});
+      }).then(()=>{setUserInfo({undefined})}).catch(err=>console.log(err));
     }
 
     const username = userInfo?.username;
