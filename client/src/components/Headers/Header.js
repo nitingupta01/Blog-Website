@@ -19,7 +19,7 @@ function Header(){
         method:'POST',
         credentials:'include',
       })
-      setUserInfo(null);
+      setUserInfo({undefined});
     }
 
     const username = userInfo?.username;
