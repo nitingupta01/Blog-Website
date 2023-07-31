@@ -80,7 +80,7 @@ app.get('/profile',(req,res)=>{
         });
     }
     else
-    res.json({});
+        res.json({});
 });
 
 app.post('/logout',(req,res)=>{
