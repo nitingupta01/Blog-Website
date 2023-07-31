@@ -31,12 +31,12 @@ function HomePage(){
             {isLoading && <div style={{marginTop:"100px" , display:"flex"}}><Oval
                 height={80}
                 width={80}
-                color="#dc143c"
+                color="#8b0000"
                 wrapperStyle={{margin:"auto"}}
                 wrapperClass=""
                 visible={true}
                 ariaLabel='oval-loading'
-                secondaryColor="#4fa94d"
+                secondaryColor="#dc143c"
                 strokeWidth={2}
                 strokeWidthSecondary={2}
             /></div>}
