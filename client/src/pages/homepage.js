@@ -28,10 +28,10 @@ function HomePage(){
     return(
         <main>
             <Header/>
-            {isLoading && <div style={{display:"flex"}}><Oval
+            {isLoading && <div style={{marginTop:"100px" , display:"flex"}}><Oval
                 height={80}
                 width={80}
-                color="#4fa94d"
+                color="#dc143c"
                 wrapperStyle={{margin:"auto"}}
                 wrapperClass=""
                 visible={true}
