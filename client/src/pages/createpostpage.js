@@ -54,7 +54,7 @@ function CreatePostPage(){
     return(
         <main>
             <Header/>
-            <form onSubmit={createPost}>
+            <form onSubmit={createPost} enctype="multipart/form-data">
                 <input type="title" placeholder='Title' value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
                 <input type="summary" placeholder='Summary' value={summary} onChange={(e)=>{setSummary(e.target.value)}}/>
                 <input type="file" onChange={(e)=>{setFiles(e.target.files)}} />
