@@ -16,7 +16,7 @@ const fs=require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.SECRET;
 
-const allowedDomains = ['https://animated-fenglisu-78b3ae.netlify.app', 'http://localhost:3000'];
+const allowedDomains = [process.env.DEPLOYED_DOMAIN, process.env.LOCAL_DOMAIN];
 app.use(cors({ credentials:true,
   origin: function (origin, callback) {
     // bypass the requests with no origin (like curl requests, mobile apps, etc )

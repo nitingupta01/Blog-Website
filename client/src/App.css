@@ -136,3 +136,10 @@ div.post-page .edit-link{
   color: white;
   border-radius: 5px;
 }
+
+.loading-box{
+  height: 70vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}

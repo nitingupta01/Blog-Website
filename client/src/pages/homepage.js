@@ -2,12 +2,11 @@ import React from "react";
 import Header from "../components/Headers/Header";
 import Post from "../components/Posts/Post";
 import { useEffect , useState } from "react";
-import {Oval} from "react-loader-spinner";
+import {BallTriangle} from "react-loader-spinner";
 
 function HomePage(){
     const [posts,setPosts] = useState([]);
     const [isLoading,setIsLoading]=useState(false);
-    const [error,setIsError]=useState(null);
 
     useEffect(()=>{
         setIsLoading(true);
@@ -15,35 +14,32 @@ function HomePage(){
             response.json().then(posts=>{
                 setPosts(posts);
                 setIsLoading(false);
-                setIsError(null);
             }).catch(err=>{
-                setIsLoading(false);
-                setIsError(err);
+                
             });
         }).catch(err=>{
-            setIsLoading(false);
-            setIsError(err);
+            
         })
     },[]);
     return(
         <main>
             <Header/>
-            {isLoading && <div style={{marginTop:"100px" , display:"flex"}}><Oval
-                height={80}
-                width={80}
-                color="#8b0000"
-                wrapperStyle={{margin:"auto"}}
-                wrapperClass=""
-                visible={true}
-                ariaLabel='oval-loading'
-                secondaryColor="#dc143c"
-                strokeWidth={2}
-                strokeWidthSecondary={2}
-            /></div>}
-            {error && <div style={{textAlign:"center"}}>Server Error</div>}
+            {isLoading && <div className="loading-box">
+                <BallTriangle
+                    height={150}
+                    width={150}
+                    radius={5}
+                    color="#4fa94d"
+                    ariaLabel="ball-triangle-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    />
+            </div>}
             {posts.length > 0 && posts.map(post=>(
-                <Post {...post} />
+            <Post {...post} />
             ))}
+            
         </main>
     )
 }
