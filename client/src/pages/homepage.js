@@ -3,6 +3,7 @@ import Header from "../components/Headers/Header";
 import Post from "../components/Posts/Post";
 import { useEffect , useState } from "react";
 import {BallTriangle} from "react-loader-spinner";
+import {URL} from '../constants/constant';
 
 function HomePage(){
     const [posts,setPosts] = useState([]);
@@ -10,7 +11,7 @@ function HomePage(){
 
     useEffect(()=>{
         setIsLoading(true);
-        fetch('https://blog-website-j3d6.onrender.com/create').then(response=>{
+        fetch(`${URL}/create`).then(response=>{
             response.json().then(posts=>{
                 setPosts(posts);
                 setIsLoading(false);

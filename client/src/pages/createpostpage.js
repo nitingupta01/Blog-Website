@@ -3,6 +3,8 @@ import Header from "../components/Headers/Header";
 import { Navigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import { URL } from "../constants/constant";
+
 
 const modules = {
     toolbar: [
@@ -36,7 +38,7 @@ function CreatePostPage(){
         data.set('file',files[0]);
 
         e.preventDefault();
-        const response = await fetch('https://blog-website-j3d6.onrender.com/create',{
+        const response = await fetch(`${URL}/create`,{
             method:'POST',
             body: data,
             credentials: 'include',

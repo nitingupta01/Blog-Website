@@ -1,0 +1,1 @@
+export const URL = 'https://blog-website-j3d6.onrender.com';

@@ -4,6 +4,8 @@ import { useState , useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import { URL } from "../constants/constant";
+
 
 
 const modules = {
@@ -34,7 +36,7 @@ function EditPostPage(){
     const [redirect,setRedirect] = useState(false);
 
     useEffect(()=>{
-        fetch(`https://blog-website-j3d6.onrender.com/post/${id}`).then(response=>{
+        fetch(`${URL}/post/${id}`).then(response=>{
             response.json().then(postInfo=>{
                 setTitle(postInfo.title);
                 setSummary(postInfo.summary);
@@ -56,7 +58,7 @@ function EditPostPage(){
             data.set('file',files?.[0]);
         }
 
-        const response = await fetch('https://blog-website-j3d6.onrender.com/post',{
+        const response = await fetch(`${URL}/post`,{
             method:'PUT',
             body:data,
             credentials:'include',

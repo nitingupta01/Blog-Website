@@ -1,13 +1,14 @@
 import React from "react";
 import {formatISO9075} from "date-fns";
 import { Link } from "react-router-dom";
+import { URL } from "../../constants/constant";
 
-function Post({_id,title,summary,content,cover,createdAt,author}){
+function Post({_id,title,summary,cover,createdAt,author}){
     return(
         <div className='post'>
           <Link to={`/post/${_id}`}>
           <div className='image'>
-            <img src={'https://blog-website-j3d6.onrender.com/'+ cover} alt="Blog"/>
+            <img src={cover} alt="Blog"/>
           </div>
           </Link>
           <div className='texts'>

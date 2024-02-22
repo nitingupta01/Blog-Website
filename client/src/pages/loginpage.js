@@ -4,6 +4,7 @@ import { useState } from "react";
 import './loginpage.css';
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../Usercontext";
+import {URL} from '../constants/constant'
 
 
 
@@ -14,7 +15,7 @@ function LoginPage(){
     const {setUserInfo} = useContext(UserContext);
     async function login(e){
         e.preventDefault();
-        const response = await fetch('https://blog-website-j3d6.onrender.com/login',{
+        const response = await fetch(`${URL}/login`,{
             method: 'POST',
             body:JSON.stringify({username,password}),
             headers:{'Content-Type':'application/json'},

@@ -1,6 +1,7 @@
 // import react from "react";
 import Header from "../components/Headers/Header";
 import { useState } from "react";
+import { URL } from "../constants/constant";
 
 
 function RegisterPage(){
@@ -9,7 +10,7 @@ function RegisterPage(){
 
     async function register(e){
         e.preventDefault();
-        const response = await fetch('https://blog-website-j3d6.onrender.com/register' , {
+        const response = await fetch(`${URL}/register` , {
             method: 'POST',
             body: JSON.stringify({username,password}),
             headers:{'Content-Type':'application/json'},

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Usercontext";
+import { URL } from "../../constants/constant";
 
 function Header(){
     const {setUserInfo,userInfo}=useContext(UserContext);
     useEffect(()=>{
-      fetch('https://blog-website-j3d6.onrender.com/profile',{
+      fetch(`${URL}/profile`,{
         credentials: 'include',
       }).then(response=>{
         response.json().then(userInfo =>{
@@ -15,7 +16,7 @@ function Header(){
     },[]);
 
     function logout(){
-      fetch('https://blog-website-j3d6.onrender.com/logout',{
+      fetch(`${URL}/logout`,{
         method:'POST',
         credentials:'include',
       }).then(()=>{setUserInfo({})}).catch(err=>console.log(err));

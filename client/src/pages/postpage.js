@@ -5,6 +5,7 @@ import { useState , useEffect ,useContext } from "react";
 import {formatISO9075} from "date-fns";
 import { UserContext } from "../Usercontext";
 import { BiEdit } from 'react-icons/bi';
+import { URL } from "../constants/constant";
 
 
 function PostPage(){
@@ -12,8 +13,7 @@ function PostPage(){
     const {userInfo} = useContext(UserContext);
     const [postInfo , setPostInfo] = useState(null);
     useEffect(()=>{
-        // console.log(id);
-        fetch(`https://blog-website-j3d6.onrender.com/post/${id}`)
+        fetch(`${URL}/post/${id}`)
             .then(response => {
                 response.json().then(postInfo => {
                     setPostInfo(postInfo);
@@ -37,7 +37,7 @@ function PostPage(){
                     ) 
                 }
                 <div className="image">
-                    <img src={`https://blog-website-j3d6.onrender.com/${postInfo.cover}`}></img>
+                    <img src={postInfo.cover}></img>
                 </div>
                 <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}}/>
             </div>
